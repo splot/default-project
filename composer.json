@@ -1,0 +1,38 @@
+{
+    "name": "splot/default-project",
+    "description": "Default application project skeleton for Splot Framework.",
+    "keywords": ["splot", "application", "skeleton"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michał Dudek",
+            "email": "michal@michaldudek.pl"
+        }
+    ],
+    "repositories": [
+		{
+    	    "type": "composer",
+			"url": "http://packagist.org/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.9",
+        "splot/framework": "dev-master",
+        "splot/assets-module": "dev-master",
+        "splot/twig-module": "dev-master",
+        "splot/knit-module": "dev-master",
+        "splot/weblog-module": "dev-master"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Splot\\AssetsModule\\Composer\\ScriptHandler::installAssets"
+        ],
+        "post-update-cmd": [
+            "Splot\\AssetsModule\\Composer\\ScriptHandler::installAssets"
+        ]
+    }
+}
