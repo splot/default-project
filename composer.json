@@ -10,15 +10,16 @@
         }
     ],
     "repositories": [
-		{
-    	    "type": "composer",
-			"url": "http://packagist.org/"
+        {
+            "type": "composer",
+            "url": "http://packagist.org/"
         }
     ],
     "require": {
         "php": ">=5.3.9",
         "splot/framework": "dev-master",
         "splot/assets-module": "dev-master",
+        "splot/devtools-module": "dev-master",
         "splot/twig-module": "dev-master",
         "splot/knit-module": "dev-master",
         "splot/weblog-module": "dev-master"
@@ -29,10 +30,12 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "Splot\\AssetsModule\\Composer\\ScriptHandler::installAssets"
+            "Splot\\AssetsModule\\Composer\\ScriptHandler::installAssets",
+            "Splot\\DevToolsModule\\Composer\\ScriptHandler::clearCache"
         ],
         "post-update-cmd": [
-            "Splot\\AssetsModule\\Composer\\ScriptHandler::installAssets"
+            "Splot\\AssetsModule\\Composer\\ScriptHandler::installAssets",
+            "Splot\\DevToolsModule\\Composer\\ScriptHandler::clearCache"
         ]
     }
 }

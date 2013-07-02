@@ -6,7 +6,11 @@ return array(
         'enabled' => false
     ),
 
-    'timezone' => 'Europe/Warsaw',
+    'cache' => array(
+        'enabled' => true,
+        'stores' => array(),
+        'caches' => array()
+    ),
 
     'SplotKnitModule' => array(
         'stores' => array(

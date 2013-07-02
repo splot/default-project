@@ -12,4 +12,4 @@ Options -MultiViews
 # Rewrite everything else!
 # But only if the requested file doesn't exist
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule	^(.*)              				app.php							[L,QSA]
+RewriteRule ^(.*)                           app.php                         [L,QSA]

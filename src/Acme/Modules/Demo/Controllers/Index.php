@@ -9,7 +9,7 @@ use Splot\TwigModule\View\View;
 class Index extends AbstractController
 {
 
-    public function respond() {
+    public function index() {
         return new View('AcmeDemoModule:Index:index.html.twig', array(
             'message' => 'Hello World!'
         ));
