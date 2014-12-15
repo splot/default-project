@@ -3,3 +3,4 @@
 /app/logs/
 /web/modules
 /web/application
+composer.lock
