@@ -1,5 +1,12 @@
-/vendor/
-/app/cache/
-/app/logs/
-/web/modules
-/web/application
+app/cache/
+app/config/config.*.php
+app/config/config.*.yml
+app/config/parameters.yml
+app/logs/
+app/tests/coverage
+web/_min
+web/application
+web/filestorage
+web/modules
+web/modulesapp
+vendor/
