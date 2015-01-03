@@ -1,0 +1,14 @@
+debugger:
+    enabled: false
+
+cache:
+    enabled: true
+    stores: []
+    caches: []
+
+SplotKnitModule:
+    stores:
+        default:
+            username: usernamechangeme
+            password: passwordchangeme
+            database: databasechangeme
