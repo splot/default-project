@@ -1,6 +1,5 @@
 <?php
 use Splot\Framework\Application\AbstractApplication;
-use Splot\Framework\Framework;
 
 class Application extends AbstractApplication
 {
@@ -9,29 +8,13 @@ class Application extends AbstractApplication
     protected $version = '0.0.0-dev';
 
     /**
-     * Bootstrap the application.
-     *
-     * This method is called right at the beginning of the process lifecycle.
-     * It's purpose is to register required services in the container. You can overwrite
-     * this method if you want to register your custom services, but you need to
-     * register specific services under specific names.
-     *
-     * If you overwrite it, it is recommended that you call the parent at one point.
-     *
-     * See documentation for more.
-     */
-    public function bootstrap() {
-        parent::bootstrap();
-    }
-
-    /**
      * Load specific modules into the application.
      *
      * Should return an array of instantiated module classes.
      * 
      * @return aray
      */
-    public function loadModules() {
+    public function loadModules($env, $debug) {
         $modules = array(
             new Splot\FrameworkExtraModule\SplotFrameworkExtraModule(),
             new Splot\KnitModule\SplotKnitModule(),
@@ -41,7 +24,7 @@ class Application extends AbstractApplication
             new Acme\Modules\Demo\AcmeDemoModule()
         );
 
-        if ($this->container->getParameter('debug') || $this->container->getParameter('mode') === Framework::MODE_CONSOLE) {
+        if ($debug) {
             $modules = array_merge($modules, array(
                 new Splot\DevToolsModule\SplotDevToolsModule(),
                 new Splot\WebLogModule\SplotWebLogModule()
