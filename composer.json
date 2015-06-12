@@ -24,15 +24,5 @@
         "psr-0": { 
             "": "src/" 
         }
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "Splot\\AssetsModule\\Composer\\ScriptHandler::installAssets",
-            "Splot\\DevToolsModule\\Composer\\ScriptHandler::clearCache"
-        ],
-        "post-update-cmd": [
-            "Splot\\AssetsModule\\Composer\\ScriptHandler::installAssets",
-            "Splot\\DevToolsModule\\Composer\\ScriptHandler::clearCache"
-        ]
     }
 }
